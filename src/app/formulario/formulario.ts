@@ -26,10 +26,14 @@ export class Formulario {
   private readonly apiUrl = '/api/checklist/submit';
 
   items: ChecklistItem[] = [
+    /*
     { key: 'faroisBaixos', label: 'Faróis baixos' },
     { key: 'faroisAltos', label: 'Faróis altos' },
-    { key: 'setasDianteiras', label: 'Setas dianteiras' },
-    { key: 'setasTraseiras', label: 'Setas traseiras' },
+    { key: 'setasDianteirasLE', label: 'Setas dianteirasLE' },
+    { key: 'setasDianteirasLD', label: 'Setas dianteirasLD' },
+    { key: 'setasTraseirasLE', label: 'Setas traseirasLE' },
+    { key: 'setasTraseirasLD', label: 'Setas traseiras LD' },
+
     { key: 'piscaAlerta', label: 'Pisca-alerta' },
     { key: 'lanternasDianteiras', label: 'Lanternas dianteiras' },
     { key: 'lanternasTraseiras', label: 'Lanternas traseiras' },
@@ -43,7 +47,37 @@ export class Formulario {
     { key: 'reservatorioLimpador', label: 'Reservatório de água do limpador' },
     { key: 'parabrisaTrincas', label: 'Para-brisa sem trincas ou danos' },
     { key: 'espelhosRetrovisores', label: 'Espelhos retrovisores' },
-    { key: 'carroceriaDanos', label: 'Carroceria sem danos aparentes' }
+    { key: 'carroceriaDanos', label: 'Carroceria sem danos aparentes' },*/
+    {key: 'bafometro',label: 'Aplicar bafômetro e atento'},
+    {key: 'inserirDiscoTCO', label:'Inserir disco TCO'},
+    {key:'quadroDeTarifa', label:'Quadro de tarifa'},
+    {key:'crlv', label:'CRLV'},
+    {key:'discoFita', label:'Disco reserva ou fita'},
+    {key:'apolice', label:'apolice RCO'},
+    {key:'tco', label:'certificado TCO'},
+    
+    
+    {key:'agerba', label:'AGERBA'},
+    {key: 'adesivosANTT', label:'Adesivos(ANTT)'},
+    {key: 'adesivosSAC', label:'Adesivos(SAC)'},
+    {key: 'adesivosSaída', label:'Adesivos(saídas de emergência)'},
+    {key: 'MarteloEmergencia', label:'Martelo de emergência'},
+    {key: 'ledEmergencia', label:'LED de emergência'},
+    {key: 'extintor', label:'Extintor de incêndio'},
+    {key:'limpezaInterna', label:'Limpeza interna'},
+    {key:'cortinas', label:'Cortinas'},
+    {key:'papelHigienco', label: 'Papel Higiênico'},
+    {key:'LimpezaDeBanheiro', label:'Limpeza de banheiro'},
+    {key:'funcionamentoDeDescarga', label:'Funcionamento de descarga'},
+    {key:'funcionamentoDePia', label:'Funcionamento de pia'},
+    {key:'lixeiraDoBanheiro', label:'Lixeira do banheiro'},
+    {key:'molaDoAssentoSanitário', label:'Mola do assento sanitário'},
+    {key:'limpezaDoSanitario', label:'Limpeza do assento sanitário'},
+    {key:'servicoDeBordo(água)', label:'Serviço de bordo(Água)'},
+    {key:'servicoDeBordo(manta)',label:'Serviço de bordo'},
+    {key:'itinerario', label:'Funcionamento do painel de itinerário'},
+    {key:'abastecimento', label:'Abastecimento do véiculo'}
+  
   ];
 
   constructor(

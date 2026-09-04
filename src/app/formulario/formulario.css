@@ -1,5 +1,5 @@
 .checklist-container {
-  max-width: 420px;
+  max-width: 550px;
   margin: 24px auto;
   padding: 16px;
   border-radius: 16px;
@@ -45,7 +45,7 @@
 }
 
 .item-row label {
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 input[type='checkbox'] {

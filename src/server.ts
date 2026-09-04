@@ -15,10 +15,10 @@ const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 const pool = new Pool({
-  host: process.env['PGHOST'] ?? 'localhost',
+  host: process.env['PGHOST'] ?? '127.0.0.1',
   port: Number(process.env['PGPORT'] ?? 5432),
-  user: process.env['PGUSER'] ?? 'postgres',
-  password: process.env['PGPASSWORD'] ?? 'postgres',
+  user: process.env['PGUSER'] ?? 'Isaac',
+  password: process.env['PGPASSWORD'] ?? '1234',
   database: process.env['PGDATABASE'] ?? 'checklist'
 });
 
@@ -184,13 +184,14 @@ app.use((req, res, next) => {
 });
 
 if (isMainModule(import.meta.url) || process.env['pm_id']) {
-  const port = process.env['PORT'] || 4000;
-  app.listen(port, (error) => {
+  const port = Number(process.env['PORT'] ?? 4000);
+
+  app.listen(port, '0.0.0.0', (error) => {
     if (error) {
       throw error;
     }
 
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.log(`Node Express server listening on http://0.0.0.0:${port}`);
   });
 }
 
