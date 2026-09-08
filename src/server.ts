@@ -13,6 +13,7 @@ import 'zone.js/node';
 const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+app.set('trust proxy', 1);
 
 const pool = new Pool({
   host: process.env['PGHOST'] ?? '127.0.0.1',
@@ -75,7 +76,10 @@ async function ensureDatabase(): Promise<void> {
         ALTER TABLE checklist_submissions
         ADD COLUMN IF NOT EXISTS submitted_at TIMESTAMPTZ
       `);
-    })();
+    })().catch((error) => {
+      initDbPromise = null;
+      throw error;
+    });
   }
 
   return initDbPromise;
