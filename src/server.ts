@@ -76,6 +76,11 @@ async function ensureDatabase(): Promise<void> {
         ALTER TABLE checklist_submissions
         ADD COLUMN IF NOT EXISTS submitted_at TIMESTAMPTZ
       `);
+
+      await pool.query(`
+        ALTER TABLE checklist_submissions
+        ADD COLUMN IF NOT EXISTS completed_at TIMESTAMPTZ
+      `);
     })().catch((error) => {
       initDbPromise = null;
       throw error;

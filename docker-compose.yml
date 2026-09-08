@@ -47,10 +47,11 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro,Z
     depends_on:
       - app
       - dashboard
 
 volumes:
+
   postgres_data:
