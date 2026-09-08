@@ -1,65 +1,55 @@
 services:
-
   app:
     build: .
     container_name: checklist-app
-
     environment:
       NODE_ENV: production
       PORT: 4000
-
       PGHOST: postgres
       PGPORT: 5432
       PGUSER: Isaac
       PGPASSWORD: 1234
       PGDATABASE: checklist
-
     depends_on:
       - postgres
+    expose:
+      - "4000"
 
   dashboard:
     build:
       context: .
       dockerfile: python/Dockerfile.dashboard
-
     container_name: checklist-dashboard
-    ports:
-      - "8501:8501"
-
     environment:
       PGHOST: postgres
       PGPORT: 5432
       PGUSER: Isaac
       PGPASSWORD: 1234
       PGDATABASE: checklist
-
     depends_on:
       - postgres
+    expose:
+      - "8501"
 
   postgres:
     image: postgres:18.4
     container_name: checklist-db
-
     environment:
       POSTGRES_DB: checklist
       POSTGRES_USER: Isaac
       POSTGRES_PASSWORD: 1234
-
     volumes:
-      - postgres_data:/var/lib/postgresql
+      - postgres_data:/var/lib/postgresql/data
 
   nginx:
     image: nginx:alpine
     container_name: checklist-nginx
-
     ports:
       - "80:80"
       - "443:443"
-
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/certs:/etc/nginx/certs:ro
-
     depends_on:
       - app
       - dashboard
