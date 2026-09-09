@@ -40,10 +40,6 @@ services:
       POSTGRES_PASSWORD: 1234
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      
-volumes:
-
-  postgres_data:
 
   nginx:
     image: nginx:alpine
@@ -56,3 +52,5 @@ volumes:
       - app
       - dashboard
 
+volumes:
+  postgres_data:
