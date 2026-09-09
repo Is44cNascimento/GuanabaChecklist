@@ -38,6 +38,8 @@ Com o Nginx expondo a porta `80`, abra no navegador:
 
 ```
 http://localhost/
+http://localhost/dashboard
+
 ```
 
 ### 5. Parar os containers
