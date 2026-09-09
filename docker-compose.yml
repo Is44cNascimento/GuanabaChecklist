@@ -32,16 +32,16 @@ services:
       - "8501"
 
   postgres:
-  image: postgres:18.4
-  container_name: checklist-db
-  environment:
-    POSTGRES_DB: checklist
-    POSTGRES_USER: Isaac
-    POSTGRES_PASSWORD: 1234
-    PGDATA: /var/lib/postgresql/data
-  volumes:
-    - postgres_data:/var/lib/postgresql/data
-    
+    image: postgres:18.4
+    container_name: checklist-db
+    environment:
+      POSTGRES_DB: checklist
+      POSTGRES_USER: Isaac
+      POSTGRES_PASSWORD: 1234
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
   nginx:
     image: nginx:alpine
     container_name: checklist-nginx
