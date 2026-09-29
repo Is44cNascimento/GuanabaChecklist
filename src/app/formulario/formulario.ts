@@ -75,9 +75,7 @@ export class Formulario {
     {key:'limpezaDoSanitario', label:'Limpeza do assento sanitário'},
     {key:'servicoDeBordo(água)', label:'Serviço de bordo(Água)'},
     {key:'servicoDeBordo(manta)',label:'Serviço de bordo'},
-    {key:'itinerario', label:'Funcionamento do painel de itinerário'},
-    {key:'abastecimento', label:'Abastecimento do véiculo'}
-  
+    {key:'itinerario', label:'Funcionamento do painel de itinerário'}  
   ];
 
   constructor(
